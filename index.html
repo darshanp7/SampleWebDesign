@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="resources/css/main.css" />
+    <title>Estelle</title>
+</head>
+
+<body>
+    <div class="background-video">
+        <video autoplay muted loop src="resources/videos/video.mp4" type="video/mp4"></video>
+    </div>
+    <div class="loading-wrapper">
+        <img id="gif_animate" src="resources/images/logo2.gif" class="loading-gif" />
+    </div>
+    <div class="box">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <line class="up" x1="0%" y1="-100%" x2="0%" y2="0%">
+                <animate attributeName="y1" attributeType="XML" begin="4.5s" from="-100%" to="0%" dur="0.1s" fill="freeze" />
+                <animate attributeName="y2" attributeType="XML" begin="4.5s" from="0%" to="15%" dur="0.1s" fill="freeze" />
+            </line>
+            <line class="top" x1="-100%" y1="0%" x2="0%" y2="0%">
+                <animate attributeName="x1" attributeType="XML" begin="4.5s" from="-100%" to="0%" dur="0.1s" fill="freeze" />
+                <animate attributeName="x2" attributeType="XML" begin="4.5s" from="0%" to="100%" dur="0.1s" fill="freeze" />
+            </line>
+            <line class="right" x1="100%" y1="-100%" x2="100%" y2="0%">
+                <animate attributeName="y1" attributeType="XML" begin="4.6s" from="-100%" to="0%" dur="0.1s" fill="freeze" />
+                <animate attributeName="y2" attributeType="XML" begin="4.6s" from="0%" to="100%" dur="0.1s" fill="freeze" />
+            </line>
+            <line class="bottom" x1="200%" y1="100%" x2="100%" y2="100%">
+                <animate attributeName="x1" attributeType="XML" begin="4.7s" from="200%" to="100%" dur="0.1s" fill="freeze" />
+                <animate attributeName="x2" attributeType="XML" begin="4.7s" from="100%" to="0%" dur="0.1s" fill="freeze" />
+            </line>
+            <line class="left" x1="0%" y1="200%" x2="0%" y2="100%">
+                <animate attributeName="y1" attributeType="XML" begin="4.8s" from="200%" to="100%" dur="0.1s" fill="freeze" />
+                <animate attributeName="y2" attributeType="XML" begin="4.8s" from="100%" to="80%" dur="0.1s" fill="freeze" />
+            </line>
+        </svg>
+        <div id="text-box">
+            <h2>Simplify your wealth management with</h2>
+            <h1 id="H1">Single Application</h1>
+            <div>
+                <p> How does managing and enjoying your wealth sound to you? <br>
+                    Sign-up and get an exclusive preview of the future of wealth
+                    management
+                </p>
+                <p> Enter your e-mail address </p>
+            </div>
+        </div>
+    </div>
+    <script src="resources/js/animations.js"></script>
+</body>
+
+</html>

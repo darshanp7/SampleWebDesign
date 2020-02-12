@@ -1,0 +1,243 @@
+html,body {
+    margin: 0;
+}
+
+.loading-wrapper {
+    top: 0;
+    position: fixed;
+    background: radial-gradient(circle at bottom left, rgba(37, 81, 107, 1), rgba(17, 36, 64, 1));
+    width: 100%;
+    height: 100%;
+    left: 0;
+    animation-name: slideWrapperRight;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.5s;
+    z-index: 0;
+}
+
+.loading-gif {
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    right: 0;
+    left: 0;
+    width: 23em;
+    margin: auto;
+    animation-name: fadeOutToTop;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+    z-index: 1;
+}
+
+.background-video {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-video video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 4/3) {
+    .backgroundVideo video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 4/3) {
+    .backgroundVideo video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.box {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 10%;
+    top: 25%;
+}
+
+line {
+    stroke: #4498AB;
+    stroke-width: 4;
+}
+
+.box div {
+    position: relative;
+    margin: auto;
+    top: -90%;
+    left: -5%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    font-family: Myriad Pro SemiCond;
+    color: white;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-delay: 4.7s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;   
+}
+
+.box div h1 {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    font-size: 80px;
+    font-stretch: ultra-expanded;
+    font-weight: lighter;
+}
+
+.box div h1 h1::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #4498AB;
+    transform: translateX(-100%);
+}
+
+.box div h2 {
+    font-size: 30px;
+    margin-bottom: auto;
+}
+
+.box div h1, h2 {
+    opacity: 0;
+    line-height: 1;
+    animation: slideUp 1s 5s, fadeIn 1s 5s;
+    animation-fill-mode: forwards;
+}
+
+.box div div {
+    position: relative;
+    margin: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.box div div::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #4498AB;
+    transform: translateX(-100%);
+    animation: overlayIn 0.6s 4.7s, overlayOut 0.6s 5.3s;
+    animation-fill-mode: both;
+}
+
+
+@keyframes fadeOutToTop {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        top: 45%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+        left: 0%;
+    }
+    100% {
+        opacity: 0;
+        left: 30%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromLeft {
+    to {
+        opacity: 
+    }
+}
+
+@keyframes slideWrapperRight {
+    to {
+        width: 50%;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(3rem);
+    }
+    to {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes overlayIn {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes overlayOut {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@font-face {
+    font-family: 'Myriad Pro SemiCond';
+    src: URL('fonts/MyriadPro-SemiCn.otf') format('truetype');
+}
