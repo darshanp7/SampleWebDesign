@@ -1,7 +1,7 @@
 var next = 0;
 var headerElement = document.getElementById('H1');
 var textBoxElement = document.getElementById('text-box');
-var interval = setTimeout(changeHeader, 12000);
+var interval = setTimeout(changeHeader, 1000);
 var headLineList = ["Verified Avenues", "Trusted Advisors", "Informed Decisions"];
 
 function changeHeader() {
@@ -15,7 +15,7 @@ function changeHeader() {
 function onFadeOutAnimationEnd() {
 //    headerElement.style.animation = "fadeIn 0.6s 0s";
     console.log("FadeOut animation Ended, now Fading in New Header");
-    if(next >= headLineList.length) next = 0;
+    if(next >= headLineList.length - 1) next = -1;
     headerElement.innerHTML = headLineList[++next];
     headerElement.style.animation = "fadeIn 0.6s 0s";
     headerElement.style.animationFillMode = "forwards";
@@ -25,5 +25,5 @@ function onFadeOutAnimationEnd() {
 
 function OnFadeInAnimationEnd() {
     console.log("FadeInAnimationEnded, waiting for 12 sec before changing");
-    setTimeout(changeHeader, 12000); 
+    setTimeout(changeHeader, 2000);
 }
